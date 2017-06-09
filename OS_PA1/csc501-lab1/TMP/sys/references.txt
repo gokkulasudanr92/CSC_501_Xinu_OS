@@ -1,0 +1,4 @@
+1. Book Reference: The Operating System Design: The Xinu Approach
+2. Student Reference: Help in Linux-like scheduling on understanding the preempt clock decrement cycle from Vishal Murugan.
+3. Link Reference: https://computing.llnl.gov/tutorials/pthreads/
+4. Link Reference: http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/

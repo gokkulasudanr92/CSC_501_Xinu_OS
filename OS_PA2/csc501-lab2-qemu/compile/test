@@ -1,0 +1,159 @@
+../config/config; mv conf.c ../sys 
+/usr/bin/gcc -E -I../h -DBRELOC=0x100000 -DBOOTPLOC=0x150000 \
+../sys/startup.S | /usr/bin/as --32 -o startup.o 
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../com/`basename comcntl.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../com/`basename comgetc.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../com/`basename comiin.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../com/`basename cominit.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../com/`basename cominput.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../com/`basename comoutput.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../com/`basename comread.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../com/`basename comintr.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename monitor.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename monarp.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename monbootp.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename monip.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename monnet.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename monudp.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename mongpq.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename ethintr.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename ethwrite.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename ethinit.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename ethdemux.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename ethwstrt.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename ethrom.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename monboot.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename montimer.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename ethcmd.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename monpci.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../mon/`basename mon3com.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename blkcmp.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename blkequ.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename main.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename stacktrace.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename chprio.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename clkinit.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename close.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename conf.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename control.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename create.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename evec.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename freebuf.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename freemem.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename getbuf.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename getc.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename getitem.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename getmem.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename getpid.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename getprio.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename getstk.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename gettime.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename gpq.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename i386.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename init.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename insert.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename insertd.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename ioerr.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename ionull.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename kill.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename kprintf.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename kputc.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename mark.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename mkpool.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename newqueue.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename open.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename panic.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename poolinit.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename putc.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename queue.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename read.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename ready.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename receive.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename recvclr.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename recvtim.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename resched.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename resume.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename scount.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename screate.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename sdelete.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename send.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename setdev.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename setnok.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename signal.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename signaln.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename sleep.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename sleep10.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename sleep100.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename sleep1000.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename sreset.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename suspend.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename unsleep.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename userret.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename wait.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename wakeup.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename write.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename xdone.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename pci.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename shutdown.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../sys/`basename linit.o .o`.[c]
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../tty/`basename ttyalloc.o .o`.[c]	 
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../tty/`basename ttycntl.o .o`.[c]	 
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../tty/`basename ttygetc.o .o`.[c]	 
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../tty/`basename ttyiin.o .o`.[c]	 
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../tty/`basename ttyinit.o .o`.[c]	 
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../tty/`basename ttynew.o .o`.[c]	 
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../tty/`basename ttyopen.o .o`.[c]	 
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../tty/`basename ttyputc.o .o`.[c]	 
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../tty/`basename ttyread.o .o`.[c]	 
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../tty/`basename ttywrite.o .o`.[c]	 
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h ../tty/`basename ttyoin.o .o`.[c]	 
+/usr/bin/gcc -E -I../h ../mon/moncksum.S | /usr/bin/as --32 -o moncksum.o
+/usr/bin/gcc -E -I../h ../mon/monclkint.S | /usr/bin/as --32 -o monclkint.o
+/usr/bin/gcc -E -I../h ../com/comint.S | /usr/bin/as --32 -o comint.o
+/usr/bin/gcc -E -I../h ../mon/ethint.S | /usr/bin/as --32 -o ethint.o
+/usr/bin/gcc -m32 -fno-builtin -c -g -Wall -O  -I../h -DBOOTPLOC=0x150000 ../mon/montftp.c -o montftp.o
+sh mkvers.sh
+/usr/bin/gcc -c -m32 -fno-builtin -c -g -Wall -O  -I../h -DVERSION=\""`cat version`"\" ../sys/initialize.c
+/usr/bin/gcc -E -I../h ../sys/intr.S | /usr/bin/as --32 -o intr.o
+/usr/bin/gcc -E -I../h ../sys/clkint.S | /usr/bin/as --32 -o clkint.o
+/usr/bin/gcc -E -I../h ../sys/ctxsw.S | /usr/bin/as --32 -o ctxsw.o
+(cd ../lib/libxc; make install)
+make[1]: Entering directory `/home/grathna/PA2/csc501-lab2-qemu/lib/libxc'
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h abs.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h atof.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h atoi.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h atol.c
+/usr/bin/as --32 -o blkcopy.o  blkcopy.s
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h bzero.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h ctype_.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h doprnt.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h doscan.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h ecvt.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h fgets.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h fprintf.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h fputs.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h gets.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h index.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h printf.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h puts.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h qsort.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h rand.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h rindex.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h scanf.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h sprintf.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h strcat.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h strchr.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h strcmp.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h strcpy.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h strlen.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h strncat.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h strncmp.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h strncpy.c
+/usr/bin/gcc -m32 -fno-builtin -O -c -I../../h swab.c
+rm -f libxc.a
+ar cr libxc.a abs.o atof.o atoi.o atol.o blkcopy.o bzero.o ctype_.o doprnt.o doscan.o ecvt.o fgets.o fprintf.o fputs.o gets.o index.o printf.o puts.o qsort.o rand.o rindex.o scanf.o	sprintf.o strcat.o strchr.o strcmp.o strcpy.o strlen.o strncat.o strncmp.o strncpy.o swab.o
+cp libxc.a ../libxc.a
+make[1]: Leaving directory `/home/grathna/PA2/csc501-lab2-qemu/lib/libxc'
+cp ../o/* .
+/usr/bin/ld -m elf_i386 -dn -Ttext 0x10000 -e start startup.o initialize.o intr.o clkint.o ctxsw.o comcntl.o comgetc.o comiin.o cominit.o cominput.o comoutput.o comread.o comintr.o monitor.o monarp.o monbootp.o monip.o monnet.o monudp.o mongpq.o ethintr.o ethwrite.o ethinit.o ethdemux.o ethwstrt.o ethrom.o monboot.o montimer.o ethcmd.o monpci.o mon3com.o blkcmp.o blkequ.o main.o stacktrace.o chprio.o clkinit.o close.o conf.o control.o create.o evec.o freebuf.o freemem.o getbuf.o getc.o getitem.o getmem.o getpid.o getprio.o getstk.o gettime.o gpq.o i386.o init.o insert.o insertd.o ioerr.o ionull.o kill.o kprintf.o kputc.o mark.o mkpool.o newqueue.o open.o panic.o poolinit.o putc.o queue.o read.o ready.o receive.o recvclr.o recvtim.o resched.o resume.o scount.o screate.o sdelete.o send.o setdev.o setnok.o signal.o signaln.o sleep.o sleep10.o sleep100.o sleep1000.o sreset.o suspend.o unsleep.o userret.o wait.o wakeup.o write.o xdone.o pci.o shutdown.o linit.o ttyalloc.o ttycntl.o ttygetc.o ttyiin.o ttyinit.o ttynew.o ttyopen.o ttyputc.o ttyread.o ttywrite.o ttyoin.o moncksum.o monclkint.o comint.o ethint.o montftp.o ../lib/libxc.a \
+-o ./xinu.elf

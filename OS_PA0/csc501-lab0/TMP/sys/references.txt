@@ -1,0 +1,5 @@
+1. https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Data/endian.html
+2. https://en.wikibooks.org/wiki/X86_Disassembly/Functions_and_Stack_Frames
+3. http://www.scs.stanford.edu/nyu/04fa/notes/l2.pdf
+4. http://www.hep.wisc.edu/~pinghc/x86AssmTutorial.htm
+5. https://software.intel.com/en-us/articles/introduction-to-x64-assembly

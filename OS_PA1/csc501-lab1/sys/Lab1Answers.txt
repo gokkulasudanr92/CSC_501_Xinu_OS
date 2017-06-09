@@ -1,0 +1,37 @@
+1. What are the advantages and disadvantages of each of the two scheduling policies? Also, give the advantages and disadvantages of the round robin scheduling policy originally implemented in Xinu.
+Solution: 
+---------
+Advantages of Exponential Distribution Scheduler:
+=================================================
+a. The Scheduler also works with preemption policy, but it is better than the Round-Robin policy implemented by default in Xinu Dispatcher.
+b. The Processes which is selected for the next scheduling is always based on the exponential distribution with the lambda factor of 0.1. 
+
+Disadvantages of Exponential Distribution Scheduler:
+====================================================
+a. The highest priority is not always selected from the list of ready processes. There may be the case that a very important process is losing stand in the scheduler.
+
+Advantages of Linux-like Scheduler:
+===================================
+a. This is a dynamic priority scheduler, which makes better opportunity for all the ready processes to execute. By better opportunities, it allows utilization based on high priority of the processes.
+b. This is better than the default Xinu Scheduler.
+
+Disadvantages of Linux-like Scheduler:
+======================================
+a. This scheduler has a time overhead for calculating the goodness for each process.
+
+Advantages of round-robin scheduler:
+====================================
+a. All the processes are considered to be equal if they have the same priority, higher priority is given the CPU first.
+b. The scheduler is based on preemption policy.
+
+Disadvantages of round-robin scheduler:
+=======================================
+a. There is a possibility for starvation, since the lower priority processes will not be selected till all the higher priority processes are done.
+
+2. Describe the way each of the schedulers affects the NULL process.
+Solution:
+---------
+
+Exponential Distribution Scheduler: In Exponential Scheduler, the priority of the process is 0 (lowest priority possible in Xinu). So, since the random number generated may be less than 0. In the previous case, the NULL Process will be switched and may take up CPU utilization for no operation. At the end of all the user processes, NULL Process will come to CPU indicating ideal state.
+
+Linux-like Scheduler: In this scheduler, the process is switched based on goodness (priority + unused epoch time of the process) value. Here the NULL Process does not come to CPU because the goodness value is 0.

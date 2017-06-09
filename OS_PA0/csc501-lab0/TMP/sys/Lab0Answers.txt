@@ -1,0 +1,69 @@
+1. Assuming the XINU text begins at address 0x0, draw a rough diagram of XINU's memory layout with addresses derived from your experimental measurements. Include the information you uncovered from running your version of printsegaddress() and printprocstks().
+
+Soln:
+
++------------+-----------+---------+-------------------------------------------------+-----------+------------------+------+------+-------------+-------------+
++            +           +         +                                                 +                              +      +                    +             +
++   Text     +   Data    +   BSS   +                 Heap/                           +                 Process      +      +          Process   +             +
++  Section   +  Section  + Section +                   Free Space                    +                  Main        +      +          PRNULL    +             +
++------------+-----------+---------+-------------------------------------------------+-----------+------------------+------+------+-------------+-------------+
+A           BC          DE        FG                                                 H           I                  J      K      L             M             N
+
+A = 0x00000000 (Assumption)
+B = 0x000094ee (etext - 1)
+C = 0x000094f2 (etext)
+D = 0x0000b5b8 (edata - 1)
+E = 0x0000b5bc (edata)
+F = 0x00013c54 (ebss - 1)
+G = 0x00013c58 (ebss)
+H = 0x00ffdffc (main process - limit pointer)
+I = 0x00ffefa0 (main process - stack pointer)
+J = 0x00ffeff8 (main process - base pointer)
+K = 0x00fff000 (prnull process - limit pointer)
+L = 0x00ffff3c (prnull process - stack pointer)
+M = 0x00fffffc (prnull process - base pointer)
+N = 0xffffffff
+
+2. What is the difference in stack top address before and after calling printtos() ? Draw a diagram to illustrate what are the contents of the items pushed into the stack between these two time points.
+Soln:
+
++-----------------------------+  0x00ffefbc 
++                             +
++       Return Address        +
++                             +
++-----------------------------+
++       Store of old          +
++             ebp             +
++-----------------------------+  0x00ffefb8
+
+3. Which byte order is adopted in the host machine that we are using ? How did you find out ?
+Soln:
+The byte order adopted here in the host machine is little endian. I used the definition of little endian that is, you store the least significant byte in the smallest address. To found this, I executed the following code snippet in my main.c:
+				unsigned int x = 1;
+				if ((int) (((char *)&x))) {
+					kprintf("LITTLE ENDIAN\n");
+				} else {
+					kprintf("BIG ENDIAN\n");
+				}
+The step (int) (char *) &x is equivalent to the byte[] array data type in Java. If the byte[0] == 1 then, it is proved that the value 1 is stored in the least significant bit (i.e zero position). Hence, verifying the little endian adoption.
+
+4. Briefly describe the mov, push, pusha, pop, and popa instructions in the x86.
+Soln:
+MOVE Instruction: mov source, destination
+The mov instruction copies the data referred to by its source location and into the location referred by destination.
+
+PUSH Instruction: push source
+The push instruction puts its source onto the top of the stack in the memory. First the esp pointer is decremented by 4 and then source is added to the location in esp.
+
+PUSHA Instruction; pusha source
+the pusha instruction pushes the contents of the general-purpose registers onto the stack. The registers are stored on the stack in the following order: EAX, ECX, EDX, EBX, EBP, ESP (original value), EBP, ESI, and EDI (if the current operand-size attribute is 32) and AX, CX, DX, BX, SP (original value), BP, SI, and DI (if the operand-size attribute is 16).
+
+POP Instruction: pop destination
+The pop instruction pops the value out from the top of the stack and pushes into the destination. First the value in esp pointer is moved to memory then the esp pointer is incremented.
+
+POPA Instruction: popa destination
+The popa instruction gets the top value from the stack and puts it into the general-purpose registers. The registers are loaded in the following order: EDI, ESI, EBP, EBX, EDX, ECX, and EAX (if the operand-size attribute is 32 bits) and DI, SI, BP, BX, DX, CX, and AX (if the operand-size attribute is 16 bits).
+
+5. In a stack frame, local variables are stored below the top of the stack. In task 3, does your result show all the local variables declared in your printtos function? If not, can you explain that? (hint: try to disable the compiler optimization by specifing -O0 in your Makefile)
+Soln:
+Since the number of local variable contents that being is 4, but the implementation of the printtos() method specified in this tar ball contains 5 local variables and so it displays 4 variables.
